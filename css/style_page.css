@@ -1,0 +1,205 @@
+.theme-blue {
+    --color-white: #fff;
+    --color-primary: #0b1d59;
+    --color-primary-light: #1e3a8a;
+    --color-primary-dark: #0b243f;
+    --color-accent: #2563eb;
+    --color-bg-light: #f9fafb;
+    --color-bg-gray: #f3f4f6;
+    --color-bg-lighter: #f5f5f5;
+    --color-border-light: #d1d5db;
+    --color-border-gray: #e5e7eb;
+    --color-border-medium: #cbd5e1;
+    --color-border-dark: #94a3b8;
+    --color-border-input: #ced4da;
+    --color-border-separator: #ddd;
+    --color-text-dark: #333;
+    --color-text-muted: #6b7280;
+    --color-text-medium: #4b5563;
+    --color-text-light: #666;
+    --color-text-lighter: #9ca3af;
+    --color-focus: #80bdff;
+    --shadow-sm: rgba(0, 0, 0, 0.04);
+    --shadow-md: rgba(0, 0, 0, 0.08);
+    --shadow-lg: rgba(0, 0, 0, 0.1);
+    --shadow-xl: rgba(0, 0, 0, 0.15);
+    --shadow-2xl: rgba(0, 0, 0, 0.25);
+    --overlay-light: rgba(11, 29, 89, 0.05);
+    --overlay-white: rgba(255, 255, 255, 0.2);
+    --overlay-white-dark: rgba(255, 255, 255, 0.3);
+    --overlay-white-bright: rgba(255, 255, 255, 0.95);
+    --focus-shadow: rgba(0, 123, 255, 0.25);
+}
+
+
+
+
+* {
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+}
+
+
+
+/* This part is the css for all the container boxes the white ones*/
+.page-box,
+.page-box-wide {
+    background: var(--color-white);
+    border-radius: 20px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    box-shadow: 0 20px 40px var(--shadow-xl);
+    border: 1px solid var(--overlay-white);
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 16px;
+}
+.custom-top {
+    margin-top: 130px;
+}
+.page-box {
+    min-width: 500px;
+}
+.page-box-wide {
+    min-width: 1000px;
+}
+.page-box .nav-btn,
+.page-box-wide .nav-btn {
+    margin-top: 30px;
+    margin-right: 15px;
+}
+.page-box .simple-btn,
+.page-box-wide .simple-btn {
+    margin-top: 10px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+/* This is the end of the seciton*/
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* These are just overal styling, so not specific */
+select {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border-input);
+    border-radius: 6px;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    cursor: pointer;
+}
+select:focus {
+    border-color: var(--color-focus);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--focus-shadow);
+}
+input {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border-input);
+    border-radius: 6px;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+input:focus {
+    border-color: var(--color-focus);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--focus-shadow);
+}
+/* end of overal styling */
+
+/* These are the simple-btn styles */
+.simple-btn {
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.15s ease;
+    box-shadow: 0 1px 2px var(--shadow-sm);
+}
+
+.simple-btn:hover {
+    background-color: var(--color-bg-gray);
+    border-color: var(--color-border-medium);
+    box-shadow: 0 3px 6px var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.simple-btn:active {
+    background-color: var(--color-border-gray);
+    border-color: var(--color-border-dark);
+    box-shadow: 0 1px 3px var(--shadow-lg);
+    transform: translateY(0);
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+
+
+.info-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 2px solid var(--overlay-white-dark);
+    flex-wrap: wrap;
+    margin: 20px 0;
+    background: var(--color-bg-lighter);
+}
+
+.help-text {
+    color: var(--color-text-light);
+    font-size: 0.9em;
+    margin: 5px 0 0 0;
+    width: 100%;
+    flex-basis: 100%;
+}
+    
+
+
+
+
