@@ -4,6 +4,8 @@ require_once "../mailer.php";
 session_start();
 
 if (isset($_POST["submit"])) {
+    validate_csrf();
+   
     $teacher_name = trim($_POST["teacher_name"]);
     $teacher_email = trim($_POST["teacher_email"]);
     $school_name = trim($_POST["school_name"]);
@@ -108,6 +110,8 @@ if (isset($_POST["submit"])) {
 <h2>Request School Acces</h2>
 
 <form method="POST" action="">
+    <?php echo csrf_field(); ?>
+
     <label for="teacher_name">Your name:</label>
     <input type="text" id="teacher_name" name="teacher_name"/>
 

@@ -4,6 +4,8 @@ $base_url = "/NextStep-Cloud";
 
 require_once "utils/crypto.php";
 require_once "utils/system.php";
+require_once "utils/security.php";
+require_once "utils/var.php";
 
 // Messages
 function flashMessages()
@@ -20,6 +22,15 @@ function flashMessages()
             "</p>\n";
         unset($_SESSION["success"]);
     }
+}
+
+function errorMessages(string $message, string $details, string $base_url)
+{
+    error_log("$message: $details");
+    $_SESSION["error"] = $message;
+    $_SESSION["error_details"] = $details;
+    header("Location: " . $base_url . "/failure/"); 
+    exit();
 }
 
 // Get the data from the .env file
@@ -57,6 +68,20 @@ function genVerificationCode(int $length)
     return $code;
 }
 
+function genPassword(int $length)
+{
+    $password = "";
+    $letters = range("a", "z");
+    for ($i = 0; $i < $length; $i++) {
+        if ($i % 2 == 0) {
+            $password .= rand(0, 9);
+        } else {
+            $index = rand(0, count($letters) - 1);
+            $password .= $letters[$index];
+        }
+    }
+    return $password;
+}
 
 
 

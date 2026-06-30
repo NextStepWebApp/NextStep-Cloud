@@ -37,6 +37,8 @@ if ($data["exp"] < time()) {
 // Handle form submission
 if (isset($_POST["submit_verification"])) {
 
+    validate_csrf();
+
     $code_user = trim($_POST["verification_code"] ?? "");
 
     if (!ctype_digit($code_user) || strlen($code_user) != 6) {
@@ -124,6 +126,9 @@ if (isset($_POST["submit_verification"])) {
     <p>A 6-digit code has been sent to <strong><?php echo htmlspecialchars($data["teacher_email"]); ?></strong>. Enter it below to confirm your request.</p>
     <br/>
     <form method="POST" action="">
+
+    <?php echo csrf_field(); ?>
+   
         <input 
             type="text" 
             name="verification_code" 

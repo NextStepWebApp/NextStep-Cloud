@@ -44,6 +44,67 @@
 }
 
 
+/* These are the styles for the container/table */
+.table-container {
+    max-height: 330px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--shadow-lg);
+    overflow: auto;
+
+    /* these styles make that you can not see the scroll thingy on the right side of the screen */
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.table-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+th {
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 0%,
+        var(--color-primary-light) 100%
+    );
+    color: white;
+    padding: 18px 24px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+}
+td {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--color-border-gray);
+    color: var(--color-primary);
+    font-size: 15px;
+    transition: background-color 0.2s ease;
+}
+.table-section {
+    max-width: 90%;
+    width: 100%;
+    margin: 150px auto 0;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px var(--shadow-xl);
+}
+tr:hover td {
+    background-color: var(--overlay-light);
+}
+
+th:last-child,
+td:last-child {
+    text-align: right;
+}
+/* end of the table/container section */
+
+
 
 /* This part is the css for all the container boxes the white ones*/
 .page-box,
